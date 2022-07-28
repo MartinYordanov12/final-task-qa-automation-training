@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -12,7 +13,8 @@ public class CreateProfilePage extends BasePage {
     private static final By POSTAL_CODE = By.id("postcode");
     private static final By COUNTRY = By.id("id_country");
     private static final By MOBILE_PHONE = By.id("phone_mobile");
-    private static final By REGISTER_BUTTON = By.id("//button[@id='submitAccount']/span");
+    private static final By REGISTER_BUTTON = By.cssSelector("button#submitAccount > span");
+    private static final By PROFILE_NAME = By.cssSelector("a[title='View my customer account'] > span");
     Select selectState = new Select(driver.findElement(STATE));
     Select selectCountry = new Select(driver.findElement(COUNTRY));
 
@@ -20,7 +22,7 @@ public class CreateProfilePage extends BasePage {
         super(driver);
     }
 
-    public void createProfile(String userName, String lastName, String password, String address, String city, String value, int zipCode, String country, int mobileNumber) {
+    public void createProfile(String userName, String lastName, String password, String address, String city, String value, String zipCode, String country, String mobileNumber) {
         fillField(CUSTOMER_FIRST_NAME, userName);
         fillField(CUSTOMER_LAST_NAME, lastName);
         fillField(PASSWORD, password);
@@ -28,10 +30,14 @@ public class CreateProfilePage extends BasePage {
         fillField(CITY, city);
         clickElement(STATE);
         selectState.selectByValue(value);
-        fillFieldWithNumber(POSTAL_CODE, zipCode);
+        fillField(POSTAL_CODE, zipCode);
         clickElement(COUNTRY);
         selectCountry.selectByValue(country);
-        fillFieldWithNumber(MOBILE_PHONE, mobileNumber);
+        fillField(MOBILE_PHONE, mobileNumber);
         clickElement(REGISTER_BUTTON);
+    }
+
+    public boolean isProfileNamePresented() throws NoSuchElementException {
+        return driver.findElement(PROFILE_NAME).isDisplayed();
     }
 }
