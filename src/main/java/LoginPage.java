@@ -41,5 +41,4 @@ public class LoginPage extends BasePage {
     public boolean isAuthenticationFailedUserPasswordMessagePresent(){
         return driver.findElement(AUTHENTICATION_FAILED_MESSAGE).isDisplayed();
     }
-
 }

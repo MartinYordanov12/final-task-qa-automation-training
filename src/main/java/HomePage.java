@@ -29,6 +29,4 @@ public class HomePage extends BasePage {
     public void clickOnSignOutButton() {
         clickElement(SIGN_OUT_BUTTON);
     }
-
-
 }

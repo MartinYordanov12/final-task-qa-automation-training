@@ -19,8 +19,4 @@ abstract class BasePage {
     void fillField(By by, String text) {
         driver.findElement(by).sendKeys(text);
     }
-
-    void fillFieldWithNumber(By by, int number){
-        driver.findElement(by).sendKeys(String.valueOf(number));
-    }
 }
