@@ -6,7 +6,9 @@ public class HomePage extends BasePage {
     private static final By SIGN_IN_BUTTON = By.cssSelector("a[title='Log in to your customer account']");
     private static final By USER_NAME = By.cssSelector("a[title='View my customer account'] > span");
     private static final By SIGN_OUT_BUTTON = By.cssSelector("a[title='Log me out']");
+    private static final By MY_WISHLIST = By.cssSelector("a[title='My wishlists'] > span");
     private static final String URL = "http://automationpractice.com/index.php";
+
 
 
     public HomePage(WebDriver driver) {
@@ -28,5 +30,13 @@ public class HomePage extends BasePage {
 
     public void clickOnSignOutButton() {
         clickElement(SIGN_OUT_BUTTON);
+    }
+
+    public void clickOnUserName(){
+        clickElement(USER_NAME);
+    }
+
+    public void clickOnMyWishList(){
+        clickElement(MY_WISHLIST);
     }
 }
