@@ -11,6 +11,8 @@ public class MyWishlistPage extends BasePage {
     private static final By DELETE_MY_WISHLIST_BOX = By.cssSelector(".icon-remove");
     private static final By FADED_SHORT_SLEEVE_TSHIRT = By.cssSelector("p#s_title");
     private static final By WOMAN_BUTTON = By.cssSelector("a[title='Women']");
+    private static final By NEW_MY_WISHLIST_NAME = By.id("name");
+    private static final By SAVE_BUTTON = By.cssSelector("button#submitWishlist > span");
     private static String FADED_SHORT_SLEEVE_TSHIRT_NAME = "";
 
     public MyWishlistPage(WebDriver driver) {
@@ -57,6 +59,11 @@ public class MyWishlistPage extends BasePage {
 
     public String returnNameOfFadedShortSleeveTshirts(){
         return FADED_SHORT_SLEEVE_TSHIRT_NAME;
+    }
+
+    public void createNewMyWishlist(){
+        fillField(NEW_MY_WISHLIST_NAME, "new wishlist");
+        clickElement(SAVE_BUTTON);
     }
 
 }

@@ -1,11 +1,9 @@
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AutoCreatedWishlistTest extends BaseTest {
-
+public class ManuallyCreatedWishlistTest extends BaseTest{
     private static final String EMAIL_ADDRESS = "ohap@abv.bg";
     private static final String PASSWORD = "Dieselron";
     HomePage homePage;
@@ -27,16 +25,15 @@ public class AutoCreatedWishlistTest extends BaseTest {
 
     }
 
-    //@RepeatedTest(4)
     @Test
-    void autoCreatedMyWishlist() {
+    void manuallyCreatedWishlistTest(){
         loginPage.loginWithExistingProfile(EMAIL_ADDRESS, PASSWORD);
         homePage.clickOnMyWishList();
         myWishlistPage.deleteMyWishlistIfExist();
+        myWishlistPage.createNewMyWishlist();
         myWishlistPage.clickOnWomanButton();
         womanClothesPage.waitForFadedShortSleeveThisrtsToBeVisible();
         womanClothesPage.getFadedShortSleeveTshirtsName();
-
         womanClothesPage.clickOnFadedShortSleeveTshirts();
         womanClothesPage.clickOnAddToWishlist();
         womanClothesPage.clickOnCloseButton();

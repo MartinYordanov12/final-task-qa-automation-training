@@ -38,10 +38,6 @@ public class WomanClothesPage extends BasePage{
         waitForElementsToBeVisible(FADED_SHORT_SLEEVE_TSHIRTS);
     }
 
-    public void switchToProductFrame(){
-        this.driver.switchTo().frame((WebElement) PRODUCT_FRAME);
-    }
-
     public String  returnNameOfFadedShortSleeveTshirts(){
         return FADED_SHORT_SLEEVE_TSHIRTS_NAME;
     }
