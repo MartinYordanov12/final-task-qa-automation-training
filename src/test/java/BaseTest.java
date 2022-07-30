@@ -28,7 +28,7 @@ public class BaseTest {
         browserVersion = caps.getVersion();
     }
 
-    @AfterEach
+    /*@AfterEach
     void teardown() {
         currentScreenShot = makeScreenShotOnFailureTest();
         DriverSingleton.getInstance().closeDriver();
@@ -36,5 +36,5 @@ public class BaseTest {
 
     protected byte[] makeScreenShotOnFailureTest() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
+    }*/
 }
