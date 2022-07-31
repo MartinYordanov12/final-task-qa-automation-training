@@ -1,17 +1,31 @@
+package com.automationpractice.tests;
+
+import com.automationpractice.pages.HomePage;
+import com.automationpractice.pages.LoginPage;
+import com.automationpractice.pages.MyWishlistPage;
+import com.automationpractice.pages.WomanClothesPage;
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AutoCreatedWishlistTest extends BaseTest {
+@ExtendWith(TestWatcherResult.class)
+@Epic("ManuallyCreatedWishlist test")
+@Feature("ManuallyCreatedWishlist test")
 
+public class ManuallyCreatedWishlistTest extends BaseTest{
     private static final String EMAIL_ADDRESS = "ohap@abv.bg";
     private static final String PASSWORD = "Dieselron";
     HomePage homePage;
     LoginPage loginPage;
     MyWishlistPage myWishlistPage;
-    ProfilePage profilePage;
     WomanClothesPage womanClothesPage;
 
     @BeforeEach
@@ -22,21 +36,23 @@ public class AutoCreatedWishlistTest extends BaseTest {
                 .navigateToHomePage()
                 .clickOnSignInButton();
         myWishlistPage = new MyWishlistPage(driver);
-        profilePage = new ProfilePage(driver);
         womanClothesPage = new WomanClothesPage(driver);
+        Allure.addAttachment("Browser name", browserName);
+        Allure.addAttachment("Browser version", browserVersion);
 
     }
-
-    //@RepeatedTest(4)
+    @Story("User tries to create new wishlist")
+    @Description("Manually create new wishlist and add product")
+    @AllureId("1")
     @Test
-    void autoCreatedMyWishlist() {
+    void manuallyCreatedWishlistTest(){
         loginPage.loginWithExistingProfile(EMAIL_ADDRESS, PASSWORD);
         homePage.clickOnMyWishList();
         myWishlistPage.deleteMyWishlistIfExist();
+        myWishlistPage.createNewMyWishlist();
         myWishlistPage.clickOnWomanButton();
         womanClothesPage.waitForFadedShortSleeveThisrtsToBeVisible();
         womanClothesPage.getFadedShortSleeveTshirtsName();
-
         womanClothesPage.clickOnFadedShortSleeveTshirts();
         womanClothesPage.clickOnAddToWishlist();
         womanClothesPage.clickOnCloseButton();

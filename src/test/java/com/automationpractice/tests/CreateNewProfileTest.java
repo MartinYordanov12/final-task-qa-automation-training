@@ -1,7 +1,23 @@
+package com.automationpractice.tests;
+
+import com.automationpractice.pages.CreateProfilePage;
+import com.automationpractice.pages.HomePage;
+import com.automationpractice.pages.LoginPage;
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@ExtendWith(TestWatcherResult.class)
+@Epic("CreateNewProfile test")
+@Feature("CreateNewProfile test")
 
 public class CreateNewProfileTest extends BaseTest {
 
@@ -29,8 +45,13 @@ public class CreateNewProfileTest extends BaseTest {
                 .clickOnSignInButton();
         loginPage.startCreatingNewProfile(EMAIL_ADDRESS);
         createProfilePage = new CreateProfilePage(driver);
+        Allure.addAttachment("Browser name", browserName);
+        Allure.addAttachment("Browser version", browserVersion);
     }
 
+    @Story("Create a new profile")
+    @Description("User tries to create new profile")
+    @AllureId("1")
     @Test
     void createNewProfile(){
         createProfilePage.createProfile(FIRST_NAME,LAST_NAME,PASSWORD,ADDRESS,CITY,STATE,POSTAL_CODE,COUNTRY,MOBILE_PHONE);
