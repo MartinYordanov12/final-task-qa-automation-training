@@ -2,7 +2,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AddToCartTest extends BaseTest {
     private static final String EMAIL_ADDRESS = "ohap@abv.bg";
@@ -44,8 +43,6 @@ public class AddToCartTest extends BaseTest {
         womanClothesPage.waitForPrintedDressAddToCartButtonToBeVisible();
         womanClothesPage.clickOnPrintedDressAddToCartButton();
         womanClothesPage.clickOnProceedToCheckout();
-        //shoppingCartPage.getFadedShortTotalPrice();
         assertEquals(shoppingCartPage.getSumOfTotalPrice(), shoppingCartPage.getTotalProducts());
-
     }
 }

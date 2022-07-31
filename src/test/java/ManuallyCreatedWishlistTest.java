@@ -9,7 +9,6 @@ public class ManuallyCreatedWishlistTest extends BaseTest{
     HomePage homePage;
     LoginPage loginPage;
     MyWishlistPage myWishlistPage;
-    ProfilePage profilePage;
     WomanClothesPage womanClothesPage;
 
     @BeforeEach
@@ -20,7 +19,6 @@ public class ManuallyCreatedWishlistTest extends BaseTest{
                 .navigateToHomePage()
                 .clickOnSignInButton();
         myWishlistPage = new MyWishlistPage(driver);
-        profilePage = new ProfilePage(driver);
         womanClothesPage = new WomanClothesPage(driver);
 
     }

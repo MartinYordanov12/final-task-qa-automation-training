@@ -37,7 +37,4 @@ public class ShoppingCartPage extends BasePage{
         String totalProductsString = driver.findElement(TOTAL_PRODUCTS).getText();
         return totalProducts = Double.parseDouble(totalProductsString.replaceAll("[$,]",""));
     }
-
-
-
 }

@@ -9,8 +9,6 @@ public class HomePage extends BasePage {
     private static final By MY_WISHLIST = By.cssSelector("a[title='My wishlists'] > span");
     private static final String URL = "http://automationpractice.com/index.php";
 
-
-
     public HomePage(WebDriver driver) {
         super(driver);
     }

@@ -8,7 +8,6 @@ public class WomanClothesPage extends BasePage{
     private static final By FADED_SHORT_SLEEVE_TSHIRTS = By.xpath("//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/h5/a");
     private static final By ADD_TO_WISHLIST = By.cssSelector("#wishlist_button");
     private static final By CLOSE_BUTTON = By.cssSelector("a[title='Close']");
-    private static final By PRODUCT_FRAME = By.cssSelector("#fancybox-frame1659110697382");
     private static final By FADED_SHIRT_ADD_TO_CART_BUTTON = By.xpath("//div[@id='center_column']/ul/li[1]/div[@class='product-container']//a[@title='Add to cart']/span[.='Add to cart']");
     private static final By CONTINUE_SHOPPING_BUTTON = By.cssSelector("span[title='Continue shopping'] > span");
     private static final By BLOUSE_ADD_TO_CART_BUTTON = By.xpath("//div[@id='center_column']/ul/li[2]/div[@class='product-container']//a[@title='Add to cart']/span[.='Add to cart']");

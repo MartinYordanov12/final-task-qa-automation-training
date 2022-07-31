@@ -35,14 +35,6 @@ public class MyWishlistPage extends BasePage {
             WebElement deleteButton = driver.findElement(DELETE_MY_WISHLIST_BOX);
             deleteButton.click();
             acceptAlert();
-//#fancybox-frame1659110697382
-                   // this.driver.switchTo().frame(1);
-            //h1.getText()
-                    //this.driver.switchTo().defaultContent();
-            //wishlist_button
-            //a[title='Close']
-              //#product a[title='Close']
-            //p#s_title
         } else {
             driver.findElement(WOMAN_BUTTON);
         }
@@ -65,5 +57,4 @@ public class MyWishlistPage extends BasePage {
         fillField(NEW_MY_WISHLIST_NAME, "new wishlist");
         clickElement(SAVE_BUTTON);
     }
-
 }
