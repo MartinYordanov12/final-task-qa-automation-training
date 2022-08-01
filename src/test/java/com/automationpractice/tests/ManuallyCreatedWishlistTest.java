@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Epic("ManuallyCreatedWishlist test")
 @Feature("ManuallyCreatedWishlist test")
 
-public class ManuallyCreatedWishlistTest extends BaseTest{
+public class ManuallyCreatedWishlistTest extends BaseTest {
     private static final String EMAIL_ADDRESS = "ohap@abv.bg";
     private static final String PASSWORD = "Dieselron";
     HomePage homePage;
@@ -41,11 +41,12 @@ public class ManuallyCreatedWishlistTest extends BaseTest{
         Allure.addAttachment("Browser version", browserVersion);
 
     }
+
     @Story("User tries to create new wishlist")
     @Description("Manually create new wishlist and add product")
     @AllureId("1")
     @Test
-    void manuallyCreatedWishlistTest(){
+    void manuallyCreatedWishlistTest() {
         loginPage.loginWithExistingProfile(EMAIL_ADDRESS, PASSWORD);
         homePage.clickOnMyWishList();
         myWishlistPage.deleteMyWishlistIfExist();

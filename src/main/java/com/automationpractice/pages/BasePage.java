@@ -26,7 +26,7 @@ abstract class BasePage {
         driver.findElement(by).sendKeys(text);
     }
 
-    void waitForElementsToBeVisible(By by){
+    void waitForElementsToBeVisible(By by) {
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }

@@ -64,7 +64,7 @@ public class LoginTest extends BaseTest {
     @Story("User tries to login with invalid credentials")
     @Description("Valid login Test with invalidvalid email and valid password")
     @AllureId("3")
-    void loginTestWithInvalidEmail(){
+    void loginTestWithInvalidEmail() {
         loginPage.loginWithExistingProfile(INVALID_EMAIL_ADDRESS, PASSWORD);
         assertTrue(loginPage.isAuthenticationFailedUserNameMessagePresent());
     }
@@ -73,7 +73,7 @@ public class LoginTest extends BaseTest {
     @Story("User tries to login with invalid credentials")
     @Description("Valid login Test with valid email and invalid password")
     @AllureId("4")
-    void loginTestWithInvalidPassword(){
+    void loginTestWithInvalidPassword() {
         loginPage.loginWithExistingProfile(EMAIL_ADDRESS, INVALID_PASSWORD);
         assertTrue(loginPage.isAuthenticationFailedUserPasswordMessagePresent());
     }

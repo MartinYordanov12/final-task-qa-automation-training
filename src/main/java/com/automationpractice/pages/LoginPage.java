@@ -36,11 +36,11 @@ public class LoginPage extends BasePage {
         }
     }
 
-    public boolean isAuthenticationFailedUserNameMessagePresent(){
+    public boolean isAuthenticationFailedUserNameMessagePresent() {
         return driver.findElement(AUTHENTICATION_FAILED_MESSAGE).isDisplayed();
     }
 
-    public boolean isAuthenticationFailedUserPasswordMessagePresent(){
+    public boolean isAuthenticationFailedUserPasswordMessagePresent() {
         return driver.findElement(AUTHENTICATION_FAILED_MESSAGE).isDisplayed();
     }
 }

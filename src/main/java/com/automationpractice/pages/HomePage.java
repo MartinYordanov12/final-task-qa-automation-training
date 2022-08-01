@@ -32,11 +32,11 @@ public class HomePage extends BasePage {
         clickElement(SIGN_OUT_BUTTON);
     }
 
-    public void clickOnUserName(){
+    public void clickOnUserName() {
         clickElement(USER_NAME);
     }
 
-    public void clickOnMyWishList(){
+    public void clickOnMyWishList() {
         clickElement(MY_WISHLIST);
     }
 }
