@@ -26,9 +26,9 @@ public class MyWishlistPage extends BasePage {
     }
 
     public String getFadedShortSleeveTshirtNameFromMyWishlist() {
-            FADED_SHORT_SLEEVE_TSHIRT_NAME = driver.findElement(FADED_SHORT_SLEEVE_TSHIRT).getText();
-            System.out.println(FADED_SHORT_SLEEVE_TSHIRT_NAME);
-            return FADED_SHORT_SLEEVE_TSHIRT_NAME;
+        FADED_SHORT_SLEEVE_TSHIRT_NAME = driver.findElement(FADED_SHORT_SLEEVE_TSHIRT).getText();
+        System.out.println(FADED_SHORT_SLEEVE_TSHIRT_NAME);
+        return FADED_SHORT_SLEEVE_TSHIRT_NAME;
     }
 
     public void deleteMyWishlistIfExist() {
@@ -47,15 +47,15 @@ public class MyWishlistPage extends BasePage {
         alert.accept();
     }
 
-    public void clickOnWomanButton(){
+    public void clickOnWomanButton() {
         clickElement(WOMAN_BUTTON);
     }
 
-    public String returnNameOfFadedShortSleeveTshirts(){
+    public String returnNameOfFadedShortSleeveTshirts() {
         return FADED_SHORT_SLEEVE_TSHIRT_NAME;
     }
 
-    public void createNewMyWishlist(){
+    public void createNewMyWishlist() {
         fillField(NEW_MY_WISHLIST_NAME, "new wishlist");
         clickElement(SAVE_BUTTON);
     }

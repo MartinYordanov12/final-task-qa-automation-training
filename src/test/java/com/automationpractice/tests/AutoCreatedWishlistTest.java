@@ -45,7 +45,6 @@ public class AutoCreatedWishlistTest extends BaseTest {
     @Story("Add new product")
     @Description("System autocreated new wishlist")
     @AllureId("1")
-    //@RepeatedTest(4)
     @Test
     void autoCreatedMyWishlist() {
         loginPage.loginWithExistingProfile(EMAIL_ADDRESS, PASSWORD);

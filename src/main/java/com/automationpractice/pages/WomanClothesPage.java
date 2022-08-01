@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class WomanClothesPage extends BasePage{
+public class WomanClothesPage extends BasePage {
 
     private static final By FADED_SHORT_SLEEVE_TSHIRTS = By.xpath("//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/h5/a");
     private static final By ADD_TO_WISHLIST = By.cssSelector("#wishlist_button");
@@ -24,80 +24,80 @@ public class WomanClothesPage extends BasePage{
 
     }
 
-    public void clickOnFadedShortSleeveTshirts(){
+    public void clickOnFadedShortSleeveTshirts() {
         clickElement(FADED_SHORT_SLEEVE_TSHIRTS);
     }
 
-    public String getFadedShortSleeveTshirtsName(){
+    public String getFadedShortSleeveTshirtsName() {
         FADED_SHORT_SLEEVE_TSHIRTS_NAME = driver.findElement(FADED_SHORT_SLEEVE_TSHIRTS).getText();
         System.out.println(FADED_SHORT_SLEEVE_TSHIRTS_NAME);
         return FADED_SHORT_SLEEVE_TSHIRTS_NAME;
 
     }
 
-    public void clickOnAddToWishlist(){
+    public void clickOnAddToWishlist() {
         clickElement(ADD_TO_WISHLIST);
     }
 
-    public void clickOnCloseButton(){
+    public void clickOnCloseButton() {
         clickElement(CLOSE_BUTTON);
     }
 
-    public void waitForFadedShortSleeveThisrtsToBeVisible(){
+    public void waitForFadedShortSleeveThisrtsToBeVisible() {
         waitForElementsToBeVisible(FADED_SHORT_SLEEVE_TSHIRTS);
     }
 
-    public String  returnNameOfFadedShortSleeveTshirts(){
+    public String returnNameOfFadedShortSleeveTshirts() {
         return FADED_SHORT_SLEEVE_TSHIRTS_NAME;
     }
 
-    public void waitForFadedShirtsAddToCartButtonToBeVisible(){
+    public void waitForFadedShirtsAddToCartButtonToBeVisible() {
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(FADED_SHORT_SLEEVE_TSHIRTS);
         action.moveToElement(we).build().perform();
         waitForElementsToBeVisible(FADED_SHIRT_ADD_TO_CART_BUTTON);
     }
 
-    public void clickOnFadedShirtsAddToCartButton(){
+    public void clickOnFadedShirtsAddToCartButton() {
         clickElement(FADED_SHIRT_ADD_TO_CART_BUTTON);
     }
 
-    public void clickOnFadedShirtsContinueShopping(){
+    public void clickOnFadedShirtsContinueShopping() {
         clickElement(CONTINUE_SHOPPING_BUTTON);
     }
 
-    public void waitForBlouseAddToCartButtonToBeVisible(){
+    public void waitForBlouseAddToCartButtonToBeVisible() {
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(BLOUSE);
         action.moveToElement(we).build().perform();
         waitForElementsToBeVisible(BLOUSE_ADD_TO_CART_BUTTON);
     }
 
-    public void clickOnBlouseAddToCartButton(){
+    public void clickOnBlouseAddToCartButton() {
         clickElement(BLOUSE_ADD_TO_CART_BUTTON);
     }
 
 
-    public void clickOnBlouseContinueShoppingButton(){
+    public void clickOnBlouseContinueShoppingButton() {
         clickElement(CONTINUE_SHOPPING_BUTTON);
     }
 
-    public void waitForPrintedDressAddToCartButtonToBeVisible(){
+    public void waitForPrintedDressAddToCartButtonToBeVisible() {
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(PRINTED_DRESS);
         action.moveToElement(we).build().perform();
         waitForElementsToBeVisible(PRINTED_DRESS_ADD_TO_CART_BUTTON);
     }
 
-    public void clickOnPrintedDressAddToCartButton(){
+    public void clickOnPrintedDressAddToCartButton() {
         clickElement(PRINTED_DRESS_ADD_TO_CART_BUTTON);
     }
 
-    public void clickOnPrintedDressContinueShoppingButton(){
+    public void clickOnPrintedDressContinueShoppingButton() {
         clickElement(CONTINUE_SHOPPING_BUTTON);
     }
 
-    public void clickOnProceedToCheckout(){
+    public void clickOnProceedToCheckout() {
         clickElement(PROCEED_TO_CHECKOUT);
     }
 }
